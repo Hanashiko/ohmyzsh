@@ -36,3 +36,15 @@ alias nmphttp='nmap -p 80,443 --script http-enum'
 alias nmpcus='nmap -sS -sV -T4 -A -v'
 
 # === ip ===
+# All IP addresses
+alias ipa='ip a'
+# Interace status
+alias ipl='ip link'
+# Routes
+alias iprt='ip route'
+# ARP table
+alias ipn='ip neigh'
+# Monitoring changes
+alias ipmon='ip monitor all'
+# Defaul geteway
+alias ipr='ip r | grep default'
