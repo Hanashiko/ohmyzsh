@@ -48,3 +48,23 @@ alias ipn='ip neigh'
 alias ipmon='ip monitor all'
 # Defaul geteway
 alias ipr='ip r | grep default'
+# Up Ethernet interface
+ipupeth() {
+  iface=$(ip -br link | awk '$1 ~ /^e/ {print $1; exit}')
+  [[ -n "$iface" ]] && sudo ip link set "$iface" up
+}
+# Down Ethernet interface
+ipdowneth() {
+  iface=$(ip -br link | awk '$1 ~ /^e/ {print $1; exit}')
+  [[ -n "$iface" ]] && sudo ip link set "$iface" down
+}
+# Up Wi-Fi interface
+ipupwlan() {
+  iface=$(ip -br link | awk '$1 ~ /^wl/ {print $1; exit}')
+  [[ -n "$iface" ]] && sudo ip link set "$iface" up
+}
+# Down Wi-Fi interface
+ipdownwlan() {
+  iface=$(ip -br link | awk '$1 ~ /^wl/ {print $1; exit}')
+  [[ -n "$iface" ]] && sudo ip link set "$iface" down
+}
