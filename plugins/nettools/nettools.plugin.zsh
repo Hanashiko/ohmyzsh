@@ -68,3 +68,14 @@ ipdownwlan() {
   iface=$(ip -br link | awk '$1 ~ /^wl/ {print $1; exit}')
   [[ -n "$iface" ]] && sudo ip link set "$iface" down
 }
+
+# TODO: need to finalise this point
+# === Other useful utilities ===
+# All ports with PID
+# Active listening ports
+# Public IP address 
+# Local IP
+# Checking DNS
+# Reset DNS cache
+# Ping to Google DNS
+# Trace to Google
