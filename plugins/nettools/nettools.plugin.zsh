@@ -84,6 +84,11 @@ ipdownwlan() {
   iface=$(ip -br link | awk '$1 ~ /^wl/ {print $1; exit}')
   [[ -n "$iface" ]] && sudo ip link set "$iface" down
 }
+# MAC addresses of the interfaces
+alias macs='ip link | grep ether'
+# Get IP via DHCP
+# alias dhcl=''
+# Reset IP addresses
 
 # === Other useful utilities ===
 # All ports with PID
@@ -102,3 +107,19 @@ alias dnsflush='sudo systemd-resolve --flush-cache'
 alias pingg='ping -c 4 8.8.8.8'
 # Trace to Google
 alias traceg='traceroute google.com'
+# DNS-resolving google.com
+alias hostg='host google.com'
+# DNS-resolving google.com
+alias nslookupg='nslookup google.com'
+# Tracing with diagnostics
+alias mtrg='mtr --report google.com'
+# Check network speed
+alias spdtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+# All TCP connections
+alias netconns='ss -tpna'
+# Listening TCP ports
+alias sslisten='ss -ltnp'
+# Listening UDP ports
+alias ssudp='ss -lunp'
+# Search by connections
+alias ssgp='ss -anp | grep'
