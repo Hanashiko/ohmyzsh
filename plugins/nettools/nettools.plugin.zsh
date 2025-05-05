@@ -36,6 +36,8 @@ alias nmphttp='nmap -p 80,443 --script http-enum'
 alias nmpcus='sudo nmap -sS -sV -T4 -A -v'
 
 # === ip ===
+# Brief outpput of IP addresses
+alias ipi='ip -br a'
 # All IP addresses
 alias ipa='ip a'
 # Interace status
