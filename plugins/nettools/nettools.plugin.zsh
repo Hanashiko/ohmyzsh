@@ -1,7 +1,7 @@
 
 # === lsof aliases ===
 # Open ports with ports (without service names)
-alias lsofp='lsof -i -P'
+alias lsofpo='lsof -i -P'
 # Who listens to port 80
 alias lsof80='lsof -i :80'
 # Who listens to port 443
@@ -13,7 +13,19 @@ alias lsofudp='lsof -nP -iUDP'
 # Template for a quick filter
 alias lsofgp='lsof -i | grep'
 # All network connections of the current user
-alias lsofme='lsof -i -a -u $USER'
+alias lsofmen='lsof -i -a -u $USER'
+# All open ports
+alias lsofports='sudo lsof -i -P -n | grep LISTEN'
+# All files of the cuurent user
+alias lsofmef='lsof -u $USER'
+# All sockets
+alias lsofsock='lsof -i'
+# All files for a specific port
+alias lsofport='f(){ sudo lsof -i :$1 ; }; f'
+# Search for files by template 
+alias lsoff='f(){ lsof | grep "$1" ; }; f'
+# All process files by PID
+alias lsofp='f(){ lsof -p $1 ; }; f'
 
 # === nmap aliases ===
 # Quick scanmap
