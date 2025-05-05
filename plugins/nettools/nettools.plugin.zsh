@@ -21,19 +21,19 @@ alias nmpqck='nmap -T4 -F'
 # Full scan of all ports
 alias nmpfll='nmap -p- -T4'
 # Determining the OS
-alias nmpos='nmap -O'
+alias nmpos='sudo nmap -O'
 # Scanning the vulnerabilities
-alias nmpvuln='nmap --script vuln'
+alias nmpvuln='nmap --script vuln --system-dns'
 # Top 100 ports
 alias nmptop='nmap --top-ports 100'
 # Ping scan of the entire local area
 alias nmplan='nmap -sn 192.168.0.1/24'
 # Tracing routes
-alias nmptra='nmap --traceroute'
+alias nmptra='sudo nmap --traceroute'
 # Web services
 alias nmphttp='nmap -p 80,443 --script http-enum'
 # Thorough scanning
-alias nmpcus='nmap -sS -sV -T4 -A -v'
+alias nmpcus='sudo nmap -sS -sV -T4 -A -v'
 
 # === ip ===
 # All IP addresses
@@ -69,16 +69,15 @@ ipdownwlan() {
   [[ -n "$iface" ]] && sudo ip link set "$iface" down
 }
 
-# TODO: need to finalise this point
 # === Other useful utilities ===
 # All ports with PID
 alias ports='netstat -tulnap'
 # Active listening ports
-alias listenports='ss -tuln'
+alias lsports='ss -tuln'
 # Public IP address 
 alias myip='curl ifconfig.co'
 # Local IP
-alias localip='hostname -I | awk "{print \$1}"'
+alias localip='hostname -i | awk "{print \$1}"'
 # Checking DNS
 alias diggoogle='dig +short google.com'
 # Reset DNS cache
