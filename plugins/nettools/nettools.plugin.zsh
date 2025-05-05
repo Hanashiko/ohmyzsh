@@ -46,6 +46,8 @@ alias nmptra='sudo nmap --traceroute'
 alias nmphttp='nmap -p 80,443 --script http-enum'
 # Thorough scanning
 alias nmpcus='sudo nmap -sS -sV -T4 -A -v'
+# Scan all localhost ports
+alias nmplocal='nmap -p- 127.0.0.1'
 
 # === ip ===
 # Brief outpput of IP addresses
