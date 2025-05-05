@@ -72,10 +72,18 @@ ipdownwlan() {
 # TODO: need to finalise this point
 # === Other useful utilities ===
 # All ports with PID
+alias ports='netstat -tulnap'
 # Active listening ports
+alias listenports='ss -tuln'
 # Public IP address 
+alias myip='curl ifconfig.co'
 # Local IP
+alias localip='hostname -I | awk "{print \$1}"'
 # Checking DNS
+alias diggoogle='dig +short google.com'
 # Reset DNS cache
+alias dnsflush='sudo systemd-resolve --flush-cache'
 # Ping to Google DNS
+alias pingg='ping -c 4 8.8.8.8'
 # Trace to Google
+alias traceg='traceroute google.com'
