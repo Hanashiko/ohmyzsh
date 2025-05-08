@@ -67,3 +67,4 @@ plugins=(... systemctl)
     - Usage: `sfind <search_pattern>`
     - Example: `sfind http`
 
+This plugin should help streamline your work with `systemctl` commands and save you time when managing services on your system.
