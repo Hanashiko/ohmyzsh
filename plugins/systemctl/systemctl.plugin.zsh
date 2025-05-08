@@ -4,7 +4,7 @@
 alias sc='sudo systemctl'
 alias scr='sudo systemctl restart'
 alias scs='sudo systemctl start'
-alias scp='sudo systemctl stop'
+alias sctp='sudo systemctl stop'
 alias scst='sudo systemctl status'
 alias sce='sudo systemctl enable'
 alias scd='sudo systemctl disable'
